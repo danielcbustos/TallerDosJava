@@ -1,8 +1,4 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Scanner;
-
-import ejercicio1.registroAlumno.Alumno;
 import ejercicio1.registroAlumno.SistemaAlumnos;
 import ejercicio2.conversorMonedas.ConversorMonedas;
 import ejercicio3.calculadoraSimple.Calculadora;
@@ -21,13 +17,38 @@ public class App {
 
                 case 1:
                     // Ejercicio1 --->Registro de alumnos
+
+                    // agregar alumnos
+                    System.out.println("Digite el numero de alumnos que desea registrar");
+                    int numAlumnos = sc.nextInt();
+                    // System.out.println("Digite el numero de calificaciones totales");
+                    // int numCalificaciones = sc.nextInt();
+                    SistemaAlumnos sistemaAlumnos = new SistemaAlumnos(numAlumnos);
+                    sistemaAlumnos.agregarAlumnos(sc);
+                    sistemaAlumnos.asignarCalificaciones(sc);
+                    sistemaAlumnos.calcularPromedioCalificaciones();
+                    // asignar calificaciones
+
+                    // // calcular promedio
+                    // float suma = 0;
+                    // for (int i = 0; i < alumno1.calificaciones.length; i++) {
+                    // suma += alumno1.calificaciones[i];
+                    // }
+                    // float promedio = suma / alumno1.calificaciones.length;
+                    // // mostrar calificaciones
+                    // System.out.println("el promedio de las calificaciones ");
+                    // for (int i = 0; i < alumno1.calificaciones.length; i++) {
+                    // System.out.print(alumno1.calificaciones[i] + " ");
+                    // }
+                    // System.out.println("del estudiante " + alumno1.nombre + " son: " + promedio);
+
                     // int[] calificaciones = { 1, 5, 4, 6 };
                     // Alumno alumno1 = new Alumno("Daniel Bustos", 27);
                     // Alumno alumno2 = new Alumno("Juan Reyes", 22);
                     // Alumno alumno3 = new Alumno("Elver", 25);
                     // System.out.println(alumno1.getNombre());
-                    SistemaAlumnos sistemaAlumnos = new SistemaAlumnos();
-                    sistemaAlumnos.agregarAlumnos(3);
+                    // SistemaAlumnos sistemaAlumnos = new SistemaAlumnos();
+                    // sistemaAlumnos.agregarAlumnos(3);
 
                     // System.out.println(alumno1.calificaciones[2]);
                     // sistemaAlumnos.calcularPromedio(alumno1);
