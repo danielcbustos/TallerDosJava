@@ -29,13 +29,27 @@ public class Calculadora {
         return division;
     }
 
-    public void mostrarResultados() {
-        System.out.println(
-                "El resultado de la suma entre sus numeros es: " + suma(numeroUno, numeroDos) + "\n" +
-                        "El resultado de la resta entre sus numeros es: " + resta(numeroUno, numeroDos) + "\n" +
-                        "El resultado de la multiplicacion entre sus numeros es: "
-                        + multiplicacion(numeroUno, numeroDos) + "\n" +
-                        "El resultado de la division entre sus numeros es: " + division(numeroUno, numeroDos));
+    public void mostrarResultados(int numEjercicio) {
+
+        switch (numEjercicio) {
+            case 1:
+                System.out.println("El resultado de la suma entre sus numeros es: " + suma(numeroUno, numeroDos));
+                break;
+            case 2:
+                System.out.println("El resultado de la resta entre sus numeros es: " + resta(numeroUno, numeroDos));
+                break;
+            case 3:
+                System.out.println("El resultado de la multiplicacion entre sus numeros es: "
+                        + multiplicacion(numeroUno, numeroDos));
+                break;
+            case 4:
+                System.out
+                        .println("El resultado de la division entre sus numeros es: " + division(numeroUno, numeroDos));
+                break;
+            default:
+                System.out.println("Digita un numero entre 1 y 4");
+                break;
+        }
 
     }
 
