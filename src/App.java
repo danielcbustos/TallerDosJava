@@ -1,7 +1,13 @@
+import java.util.List;
 import java.util.Scanner;
 import ejercicio1.registroAlumno.SistemaAlumnos;
 import ejercicio2.conversorMonedas.ConversorMonedas;
 import ejercicio3.calculadoraSimple.Calculadora;
+import ejercicio4.reservasHotel.Cliente;
+import ejercicio4.reservasHotel.Habitacion;
+import ejercicio4.reservasHotel.Hotel;
+import ejercicio4.reservasHotel.Reserva;
+import ejercicio4.reservasHotel.SistemaReservaHotel;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -17,42 +23,12 @@ public class App {
 
                 case 1:
                     // Ejercicio1 --->Registro de alumnos
-
-                    // agregar alumnos
                     System.out.println("Digite el numero de alumnos que desea registrar");
                     int numAlumnos = sc.nextInt();
-                    // System.out.println("Digite el numero de calificaciones totales");
-                    // int numCalificaciones = sc.nextInt();
                     SistemaAlumnos sistemaAlumnos = new SistemaAlumnos(numAlumnos);
                     sistemaAlumnos.agregarAlumnos(sc);
                     sistemaAlumnos.asignarCalificaciones(sc);
                     sistemaAlumnos.calcularPromedioCalificaciones();
-                    // asignar calificaciones
-
-                    // // calcular promedio
-                    // float suma = 0;
-                    // for (int i = 0; i < alumno1.calificaciones.length; i++) {
-                    // suma += alumno1.calificaciones[i];
-                    // }
-                    // float promedio = suma / alumno1.calificaciones.length;
-                    // // mostrar calificaciones
-                    // System.out.println("el promedio de las calificaciones ");
-                    // for (int i = 0; i < alumno1.calificaciones.length; i++) {
-                    // System.out.print(alumno1.calificaciones[i] + " ");
-                    // }
-                    // System.out.println("del estudiante " + alumno1.nombre + " son: " + promedio);
-
-                    // int[] calificaciones = { 1, 5, 4, 6 };
-                    // Alumno alumno1 = new Alumno("Daniel Bustos", 27);
-                    // Alumno alumno2 = new Alumno("Juan Reyes", 22);
-                    // Alumno alumno3 = new Alumno("Elver", 25);
-                    // System.out.println(alumno1.getNombre());
-                    // SistemaAlumnos sistemaAlumnos = new SistemaAlumnos();
-                    // sistemaAlumnos.agregarAlumnos(3);
-
-                    // System.out.println(alumno1.calificaciones[2]);
-                    // sistemaAlumnos.calcularPromedio(alumno1);
-
                     break;
                 case 2:
                     // Ejercicio2 --->Conversor de monedas
@@ -75,7 +51,6 @@ public class App {
 
                 case 3:
                     // Ejercicio3 --->Calculadora simple
-
                     System.out.println("Digite un numero: ");
                     float numeroUno = sc.nextFloat();
                     System.out.println("Digite un segundo numero: ");
@@ -90,7 +65,21 @@ public class App {
 
                 case 4:
                     // Ejercicio4 ---> Sistema de reservas de hotel
-                    System.out.println("Holis 4");
+
+                    SistemaReservaHotel sistemaReservasHotel = new SistemaReservaHotel();
+                    sistemaReservasHotel.agregarHotel();
+                    System.out.println("Digita el nombre de la empresa que hara las reservaciones");
+                    sc.nextLine();
+                    String nombreEmpresa = sc.nextLine();
+                    sistemaReservasHotel.agregarClientesConReserva(sc);
+                    sistemaReservasHotel.mostrarInformacion(nombreEmpresa);
+                    // if (reserva2 != null) {
+                    // System.out.println(
+                    // "Nombre: " + reserva2.cliente.nombre + " | Habitación: "
+                    // + reserva2.habitacion.numeroHabitacion);
+                    // }
+
+                    // sistemaReservasHotel.listarHabitaciones();
 
                     break;
                 case 5:
@@ -104,7 +93,7 @@ public class App {
 
             }
             if (bandera) {
-                System.out.println("Quieres realizar otro ejercicio: si/no");
+                System.out.println("\nQuieres realizar otro ejercicio: si/no");
                 sc.nextLine();
                 boolean repetir = true;
                 do {
