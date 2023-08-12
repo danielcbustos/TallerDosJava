@@ -1,12 +1,8 @@
-import java.util.List;
+
 import java.util.Scanner;
 import ejercicio1.registroAlumno.SistemaAlumnos;
 import ejercicio2.conversorMonedas.ConversorMonedas;
 import ejercicio3.calculadoraSimple.Calculadora;
-import ejercicio4.reservasHotel.Cliente;
-import ejercicio4.reservasHotel.Habitacion;
-import ejercicio4.reservasHotel.Hotel;
-import ejercicio4.reservasHotel.Reserva;
 import ejercicio4.reservasHotel.SistemaReservaHotel;
 
 public class App {
@@ -73,14 +69,6 @@ public class App {
                     String nombreEmpresa = sc.nextLine();
                     sistemaReservasHotel.agregarClientesConReserva(sc);
                     sistemaReservasHotel.mostrarInformacion(nombreEmpresa);
-                    // if (reserva2 != null) {
-                    // System.out.println(
-                    // "Nombre: " + reserva2.cliente.nombre + " | Habitación: "
-                    // + reserva2.habitacion.numeroHabitacion);
-                    // }
-
-                    // sistemaReservasHotel.listarHabitaciones();
-
                     break;
                 case 5:
                     // Salir
